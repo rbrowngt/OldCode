@@ -1,0 +1,44 @@
+In computing, floating point describes a method of representing real numbers in a way that can support a wide range of values. Numbers are, in general, represented approximately to a fixed number of significant digits and scaled using an exponent. The base for the scaling is normally 2, 10 or 16. The typical number that can be represented exactly is of the form:
+
+    Significant digits Ã— baseexponent
+
+The term floating point refers to the fact that the radix point (decimal point, or, more commonly in computers, binary point) can "float"; that is, it can be placed anywhere relative to the significant digits of the number. This position is indicated separately in the internal representation, and floating-point representation can thus be thought of as a computer realization of scientific notation. Over the years, a variety of floating-point representations have been used in computers. However, since the 1990s, the most commonly encountered representation is that defined by the IEEE 754 Standard.
+
+The advantage of floating-point representation over fixed-point and integer representation is that it can support a much wider range of values. For example, a fixed-point representation that has seven decimal digits with two decimal places can represent the numbers 12345.67, 123.45, 1.23 and so on, whereas a floating-point representation (such as the IEEE 754 decimal32 format) with seven decimal digits could in addition represent 1.234567, 123456.7, 0.00001234567, 1234567000000000, and so on. The floating-point format needs slightly more storage (to encode the position of the radix point), so when stored in the same space, floating-point numbers achieve their greater range at the expense of precision.
+
+The speed of floating-point operations, commonly referred to in performance measurements as FLOPS, is an important machine characteristic, especially in software that performs large-scale mathematical calculations.
+
+A number representation (called a numeral system in mathematics) specifies some way of storing a number that may be encoded as a string of digits. The arithmetic is defined as a set of actions on the representation that simulate classical arithmetic operations.
+
+There are several mechanisms by which strings of digits can represent numbers. In common mathematical notation, the digit string can be of any length, and the location of the radix point is indicated by placing an explicit "point" character (dot or comma) there. If the radix point is omitted then it is implicitly assumed to lie at the right (least significant) end of the string (that is, the number is an integer). In fixed-point systems, some specific assumption is made about where the radix point is located in the string. For example, the convention could be that the string consists of 8 decimal digits with the decimal point in the middle, so that "00012345" has a value of 1.2345.
+
+In scientific notation, the given number is scaled by a power of 10 so that it lies within a certain rangeâ€”typically between 1 and 10, with the radix point appearing immediately after the first digit. The scaling factor, as a power of ten, is then indicated separately at the end of the number. For example, the revolution period of Jupiter's moon Io is 152853.5047 seconds, a value that would be represented in standard-form scientific notation as 1.528535047Ã—105 seconds.
+
+Floating-point representation is similar in concept to scientific notation. Logically, a floating-point number consists of:
+
+    A signed digit string of a given length in a given base (or radix). This digit string is referred to as the significand, coefficient or, less often, the mantissa (see below). The length of the significand determines the precision to which numbers can be represented. The radix point position is assumed to always be somewhere within the significandâ€”often just after or just before the most significant digit, or to the right of the rightmost (least significant) digit. This article will generally follow the convention that the radix point is just after the most significant (leftmost) digit.
+    A signed integer exponent, also referred to as the characteristic or scale, which modifies the magnitude of the number.
+
+To derive the value of the floating point number, one must multiply the significand by the base raised to the power of the exponent, equivalent to shifting the radix point from its implied position by a number of places equal to the value of the exponentâ€”to the right if the exponent is positive or to the left if the exponent is negative.
+
+Using base-10 (the familiar decimal notation) as an example, the number 152853.5047, which has ten decimal digits of precision, is represented as the significand 1528535047 together with an exponent of 5 (if the implied position of the radix point is after the first most significant digit, here 1). To determine the actual value, a decimal point is placed after the first digit of the significand and the result is multiplied by 105 to give 1.528535047 Ã— 105, or 152853.5047. In storing such a number, the base (10) need not be stored, since it will be the same for the entire range of supported numbers, and can thus be inferred.
+
+Symbolically, this final value is
+
+    s \times b^e
+
+where s is the value of the significand (after taking into account the implied radix point), b is the base, and e is the exponent.
+
+By allowing the radix point to be adjustable, floating-point notation allows calculations over a wide range of magnitudes, using a fixed number of digits, while maintaining good precision. For example, in a decimal floating-point system with three digits, the multiplication that humans would write as
+
+    0.12 Ã— 0.12 = 0.0144
+
+would be expressed as
+
+    (1.20Ã—10âˆ’1) Ã— (1.20Ã—10âˆ’1) = (1.44Ã—10âˆ’2).
+
+In a fixed-point system with the decimal point at the left, it would be
+
+    0.120 Ã— 0.120 = 0.014.
+
+A digit of the result was lost because of the inability of the digits and decimal point to 'float' relative to each other within the digit string.

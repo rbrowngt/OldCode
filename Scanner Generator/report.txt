@@ -1,0 +1,71 @@
+Ronald Brown
+CS 3240: Languages and Computation
+Homework I
+902778929
+
+This project was implemented using the c++ programming language.  The program reads in user input from the command line, and passes these commands to to the QueryEngine.  The queryengine then query's the scanner for various outputs.  
+
+Usage:
+-------------
+Make file:
+
+To Clean: "make clean"
+To Build: "make" or "make all"
+To run the output binary: ./main
+
+The user will then be prompted to input the name of the file they wish to parse.  
+
+Assumptions:
+-------------
+- User will only input valid text documents
+- File to be scanned is in the same directory as the binary file
+
+
+Scanner Class:
+--------------
+The scanner class takes into it's constructor the string name of the file into an ifstream.  This ifstream is parsed and token matching is done using the longest matching rule.  
+At the same time, the scanner also keeps track of quoted texts and adds all valid and associated strings to custom structs that were created to hold these token "entries."  
+Entries are then stored in vectors of entry structs and queried and sorted at will.  This class also contains two custom comparitor functions used in various means of sorting.
+
+QueryEngine Class:
+--------------
+This class supports all the functionality required of the query engine.  When a user makes a request from the main (main.cpp) file, a corrosponding function is invoked in the QueryEngine class which preforms required logic and queries the Scanner class as needed.  
+This function also contains 4 different comparitor functions used for sorting.
+
+Main Class (main.cpp):
+------------
+This program handles the command line interface and invokes the QueryEngine class
+
+
+
+Test Cases:
+------------
+All of these test cases are also in the "test.txt" file
+
+"Hello world"
+"Hello Jason"
+and then he said "hello
+onto the world I love thee"
+9.0
+2
+---------
+8675309
+abc-4.c1DD
+6788888.2
+834asd.4590.29
+1.528535047×105 seconds
+Ron
+Ron
+Ron
+99
+/error
+helloworld I am ronald Brown
+This
+is
+a
+test
+44
+456
+asd44rfff
+w777777777
+Ron

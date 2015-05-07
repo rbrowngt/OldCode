@@ -1,0 +1,54 @@
+Please input the name of your file to use
+test.txt
+Scanning Document.
+...Done
+
+input document : test.txt
+VAR : 
+Brown, 1
+Hello, 2
+Jason, 1
+Ron, 4
+This, 1
+abc-4, 1
+am, 1
+and, 1
+asd, 1
+asd44rfff, 1
+c1DD, 1
+error, 1
+he, 1
+hello, 1
+helloworld, 1
+is, 1
+love, 1
+onto, 1
+ronald, 1
+said, 1
+seconds, 1
+test, 1
+the, 1
+thee, 1
+then, 1
+w777777777, 1
+world, 2
+
+INT: 
+105, 1
+44, 1
+456, 1
+834, 1
+8675309, 1
+99, 1
+
+FLOAT: 
+1.528535047, 1
+4590.29, 1
+6788888.2, 1
+9.0, 1
+
+QUOTES: 
+Quote: Hello world
+Quote: Hello Jason
+Quote: hello onto the world I love thee
+
